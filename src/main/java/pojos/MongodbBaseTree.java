@@ -4,6 +4,8 @@ package pojos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Date;
+
 public class MongodbBaseTree {
 
     @JsonProperty("_id")
@@ -13,19 +15,16 @@ public class MongodbBaseTree {
     @JsonProperty("type")
     private String type;
     @JsonProperty("processed")
-    private String processed;
+    private boolean processed;
     @JsonProperty("processRequested")
-    private String processRequested;
-    @JsonProperty("lastModifiedDate")
-    private String lastModifiedDate;
+    private ProcessRequested processRequested;
     @JsonProperty("createdBy")
     private String createdBy;
     @JsonProperty("blob")
     private String blob;
     @JsonProperty("code")
     private String code;
-    @JsonProperty("processExecuting")
-    private String processExecuting;
+
 
     public MongodbId getId() {
         return id;
@@ -39,16 +38,12 @@ public class MongodbBaseTree {
         return type;
     }
 
-    public String getProcessed() {
+    public boolean getProcessed() {
         return processed;
     }
 
-    public String getProcessRequested() {
+    public ProcessRequested getProcessRequested() {
         return processRequested;
-    }
-
-    public String getLastModifiedDate() {
-        return lastModifiedDate;
     }
 
     public String getCreatedBy() {
@@ -63,7 +58,4 @@ public class MongodbBaseTree {
         return code;
     }
 
-    public String getProcessExecuting() {
-        return processExecuting;
-    }
 }

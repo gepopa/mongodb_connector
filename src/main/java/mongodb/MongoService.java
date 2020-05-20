@@ -4,9 +4,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 import pojos.MongodbBaseTree;
+import pojos.MongodbId;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import static com.mongodb.client.model.Filters.and;
+import static com.mongodb.client.model.Projections.fields;
+import static com.mongodb.client.model.Sorts.descending;
 import static mongodb.MongoConstants.*;
 
 
@@ -21,6 +27,7 @@ public class MongoService {
     }
 
     public static Document getFirstDocument() {
+
         return collection.find().first();
     }
 

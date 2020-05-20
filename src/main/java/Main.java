@@ -28,6 +28,7 @@ public class Main {
                 .append("blob", "11052020163528_categories-images2.csv")
                 .append("code", "X_FtkLDYF9S76tBnvYNBAe");
         addDocument(doc);
+        System.out.println("Added Document: " + doc.toString());
 
         /*
          * Get the first document in mongodb
@@ -56,7 +57,6 @@ public class Main {
          * Transform timestamp from DocumentID to Formatted Date
          */
         System.out.println(getTimestampToIsoDate(objectId.getTimestamp()));
-
 
     }
 }
